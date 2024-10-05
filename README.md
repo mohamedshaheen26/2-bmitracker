@@ -2,7 +2,7 @@
 
 This is a simple React-based Body Mass Index (BMI) Calculator that allows users to input their weight and height to calculate their BMI. It also provides a message indicating their BMI category (e.g., "Normal," "Overweight," "Severely Obese").
 
-![BMI Calculator Preview](./assets/bmi-calculator-preview.png)
+![BMI Calculator Preview](./public/assets/bmi-calculator-preview.png)
 
 ## Features
 
