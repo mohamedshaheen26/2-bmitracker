@@ -14,9 +14,30 @@
 }
 
 .container {
+  border-radius: 35px;
   box-shadow: 0px 0px 12px #ccc;
-  border-radius: 8px;
   padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.mode {
+  position: absolute;
+  cursor: pointer;
+  left: 12px;
+  top: 12px;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-content: center;
+  border-radius: 25px;
+  border-bottom-left-radius: 0;
+  background: #0025;
+}
+
+#modeIcon {
+  color: white;
 }
 
 h2 {
@@ -36,6 +57,16 @@ input {
   text-indent: 5px;
 }
 
+input::placeholder {
+  font-size: 16px;
+  transition: 0.5s;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+  transition: 0.5s;
+}
+
 .btn {
   display: block;
   width: 100%;
@@ -47,12 +78,13 @@ input {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: 0.5s ease-in-out;
 }
 /* unvisited link */
 
 .btn-outline {
-  background-color: #eee;
-  color: #707377;
+  background-color: #aaaab5;
+  color: #ffffff;
 }
 
 h3,
@@ -65,7 +97,7 @@ p {
 }
 
 .btn-outline:hover {
-  background-color: #ddd;
+  background-color: #838383;
 }
 
 .flex {
@@ -75,5 +107,141 @@ p {
   position: relative;
 }
 
-@media (max-width: 600px) {
+/* Default (Light) Theme Styles */
+.container {
+  background-color: white;
+  color: black;
+}
+
+button {
+  background-color: blue;
+  color: white;
+}
+
+.history-btn {
+  position: absolute;
+  left: -28px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #d4d4d4;
+  padding: 6px;
+  writing-mode: vertical-lr;
+  cursor: pointer;
+  transition: 0.5s;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: black;
+}
+
+.history-btn:hover {
+  background-color: #868585;
+}
+
+.history {
+  position: absolute;
+  width: 230px;
+  height: 100%;
+  top: 0;
+  right: -231px;
+  background-color: #d4d4d4;
+  border-radius: 0 35px 35px 0;
+  transition: 0.5s ease-in-out;
+}
+
+.history h3 {
+  background: #c1c1c1;
+  padding: 6px;
+}
+
+.history ul {
+  overflow: auto;
+  height: calc(100% - 73px);
+  list-style-type: none;
+}
+
+.history ul li {
+  padding: 3px 10px 10px;
+  border-bottom: 1px solid #fafafa;
+}
+
+.history ul li:hover {
+  background-color: #bababa;
+}
+
+.history-row {
+  text-align: center;
+}
+
+.history-row .date {
+  display: block;
+  font-size: 11px;
+  text-align: right;
+  color: #3d3d3ddd;
+}
+
+.history-row .flex {
+  font-size: 13px;
+}
+
+.history-row p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.clear-history {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #cf0000;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.5s;
+}
+.clear-history:hover {
+  background-color: #ba0000;
+}
+/* Dark Theme Styles */
+.dark {
+  background-color: #353535;
+}
+.dark .container {
+  background-color: #333;
+  color: white;
+  box-shadow: 0px 0px 12px #202020;
+}
+
+.dark input {
+  background-color: #9f9f9f;
+}
+
+.dark input::placeholder {
+  color: #ddd;
+}
+
+.dark .history,
+.dark .history-btn {
+  background-color: #545454;
+  color: white;
+}
+
+.dark .history-btn:hover {
+  background-color: #444444;
+}
+
+.dark .history h3 {
+  background-color: #6f6f6f;
+}
+
+.dark .history .date {
+  color: #afafaf;
+}
+
+.dark .history ul li:hover {
+  background-color: #5d5d5d;
 }
